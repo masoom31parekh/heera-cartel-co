@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0A0A0A;
+  color: #FFFFFF;
+  font-family: 'Lato', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+p {
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+/* No hyphens - clean text display */
+.no-hyphens {
+  hyphens: none;
+}
+
+/* Animations */
+@keyframes diamondSpark {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) rotate(0deg);
+    filter: blur(10px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+@keyframes diamondGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
+  }
+}
+
+@keyframes textReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-diamond-spark {
+  animation: diamondSpark 3s ease-out forwards;
+}
+
+.animate-diamond-glow {
+  animation: diamondGlow 2s ease-in-out infinite;
+}
+
+.animate-text-reveal {
+  animation: textReveal 1s ease-out forwards;
+}
+
+/* Smooth scroll for Lenis */
+html.lenis {
+  height: auto;
+}
+
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-gold text-charcoal px-8 py-3 font-lato font-700 rounded-lg hover:bg-opacity-90 transition-all duration-300 uppercase tracking-wider;
+}
+
+.btn-secondary {
+  @apply border border-gold text-gold px-8 py-3 font-lato font-700 rounded-lg hover:bg-gold hover:text-charcoal transition-all duration-300 uppercase tracking-wider;
+}
+
+.btn-tertiary {
+  @apply bg-charcoal border border-champagne text-champagne px-8 py-3 font-lato font-700 rounded-lg hover:border-gold hover:text-gold transition-all duration-300 uppercase tracking-wider;
+}
+
+/* Input styles */
+input, textarea, select {
+  @apply bg-gray-900 border border-gold text-white px-4 py-2 rounded-lg focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold;
+}
+
+input::placeholder, textarea::placeholder {
+  @apply text-gray-400;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0A0A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E8C547;
+}
